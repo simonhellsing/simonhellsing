@@ -1,0 +1,56 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! If we have a tag cover, display that - else blog cover - else nothing }}
+
+<style>
+
+body { background-color: #111111; color: #DEDEDE;
+}
+
+
+body a { color: #DEDEDE;
+        text-decoration: none;
+    }
+.active {border-bottom: 1px solid #DEDEDE;}
+    
+
+</style>
+
+<header class="main-header">
+        <h1>Simon Hellsing – Product Designer</br>
+            Berlin, Germany</br>
+            <a onclick="myFunction('copied')" class="btn" data-clipboard-text="simon.hellsing@hyperisland.se">simon.hellsing@hyperisland.se
+            <span id="tooltip" class="tooltiptext">Copy to Clipboard</span></a></br>
+            (0049) 1575-6633464</br>
+        </h1>
+        <nav>
+            <a href="http://localhost:2368">Work</a>
+            <a href="http://localhost:2368/about">About</a>
+            <a href="http://localhost:2368/tags/journal" class="active">Journal</a>
+        </nav>
+</header>
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+
+<h1 class="downlow">Simon Hellsing – Product Designer</br>
+            Berlin, Germany</br>
+            simon.hellsing@hyperisland.se</br>
+            (0049) 1575-6633464</br>
+</h1>
+
+    {{#foreach posts}}
+<article class="{{post_class}}">
+    <header class="post-header">
+        
+        <img src={{image}} />
+        <div class="post-title">{{{title}}} 
+        <div class="excerpt">{{tags limit="1" autolink="false"}}</div>
+    </div>
+        
+    </header>
+</article>
+{{/foreach}}
+
+</main>

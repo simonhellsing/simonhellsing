@@ -1,0 +1,100 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+<style>
+
+body { background-color: #E6E6E6; color: #212121;
+}
+
+
+body a { color: #212121;
+        text-decoration: none;
+    }
+.active {border-bottom: 1px solid #212121;}
+    
+
+</style>
+
+
+
+
+<header class="main-header alt">
+        <a href="http://localhost:2368"><svg width="34px" height="72px" viewBox="0 0 34 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M33.006,66.742 L7.377,36 L33.006,5.258 C34.139,3.897 33.953,1.879 32.596,0.744 C31.239,-0.391 29.215,-0.207 28.082,1.152 L0.744,33.947 C0.246,34.541 0,35.271 0,36 C0,36.73 0.246,37.459 0.744,38.053 L28.082,70.848 C29.215,72.207 31.238,72.391 32.596,71.256 C33.957,70.119 34.141,68.105 33.006,66.742 L33.006,66.742 Z" id="Shape" fill="#000000"></path>
+    </g>
+</svg></a>
+        
+
+        <nav>
+            <a href="http://localhost:2368" class="active">Work</a>
+            <a href="http://localhost:2368/about">About</a>
+            <a href="http://localhost:2368/tag/journal">Journal</a>
+        </nav>
+  
+</header>
+
+
+
+<main class="content post" role="main">
+    <article class="{{post_class}}">
+
+
+            {{content}}
+
+    </article>
+</main>
+
+
+<section class="post-other">
+{{#next_post}}
+{{#has tag="work"}}
+<a href="{{url}}">
+<section class="post-previous">
+    <div class="byline">Previous</div>
+    <div class="post-title">{{title}}</div>
+</section>
+</a>
+{{/has}}
+{{/next_post}}
+
+{{#prev_post}}
+{{#has tag="work"}}
+<a href="{{url}}">
+<section class="post-next">
+    
+    <div class="byline">Next</div>
+    <div class="post-title">{{title}}</div>
+</section>
+</a>
+{{/has}}
+{{/prev_post}}
+</section>
+
+
+
+
+
+
+
+{{/post}}
+    <script src="../dist/headroom.min.js"></script>
+
+    <script>
+// grab an element
+var myElement = document.querySelector(".top");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+// initialise
+headroom.init(); 
+
+</script>

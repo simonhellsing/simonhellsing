@@ -1,0 +1,89 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+
+<header class="main-header">
+    <div class="top">
+        
+        <nav>
+            <a href="http://localhost:2368">Work</a>
+            <a href="http://localhost:2368/about" class="active">About</a>
+            <a href="http://localhost:2368/tag/journal">Journal</a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="about" role="main">
+    <article>
+        <section class="intro">
+            {{content}}
+            <h2><a onclick="myFunction('copied')" class="btn" data-clipboard-text="simon.hellsing@hyperisland.se">simon.hellsing@hyperisland.se
+            <span id="tooltip" class="tooltiptext">Copy to Clipboard</span></a></br>
+            (0049) 1575-6633464</br>
+</h2>
+        </section>
+
+        <img src="{{image}}"></img>
+    </article>
+
+    <article> 
+        <section class="column">
+            <ul>
+                <h2>Experience</h2>
+                <li>Wimdu,  Product Designer <br />
+                    2014-2016  –  Berlin, Germany 
+                </li>
+                <li>Durated,  UI/UX Designer<br />
+                    2014-2014  –  Berlin, Germany 
+                </li>
+                <li>Freelancer,  Digital Designer<br />
+                    2013-2014  –  Stockholm, Sweden 
+                </li>
+                <li>Your Majesty,  Design Squire<br />
+                    2012-2013  –  New York, US 
+                </li>
+            </ul>
+            <ul>
+                <h2>Education</h2>
+                <li>Hyper Island,  Digital Design<br />
+                    2011-2012  –  Karlskrona, Sweden 
+                </li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <ul>
+                <h2>Skills</h2>
+                <li>Concept Development</li>
+                <li>User Experience Research</li>
+                <li>User Interface Design</li>
+                <li>Prototyping</li>
+                <li>Project Management</li>
+                <li>Frontend Development</li>
+            </ul>
+            <ul>
+                <h2>Tools</h2>
+                <li>Adobe Creative Suite</li>
+                <li>InVision</li>
+                <li>Marvelapp</li>
+                <li>Principle</li>
+            </ul>
+        </section>
+    </article>
+    <article>
+        <a href="" class="active">Download full CV as PDF</a>
+        <p>
+        <a href="https://www.instagram.com/simonhellsing/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/simonhellsing/" target="_blank">Linkedin</a>
+        <a href="https://www.pinterest.com/simonhellsing/" target="_blank">Pinterest</a>
+        <a href="https://www.dribbble.com/simonhellsing/" target="_blank">Dribbble</a>
+        </p>
+    </article>
+</main>
+{{/post}}

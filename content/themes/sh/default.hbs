@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+
+    
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+
+  <div class="cont">
+<body class="{{body_class}} nav-closed">
+
+
+
+    <div class="site-wrapper">
+
+        {{! Everything else gets inserted here }}
+        {{{body}}}
+
+
+    </div>
+ </div>
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    
+   
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+        <script src="{{asset "jquery-3.0.0.min.js"}}"></script>
+    
+    <script src="{{asset "headroom.min.js"}}"></script>
+    <script src="{{asset "clipboard.min.js"}}"></script>
+
+
+
+
+    <script>
+
+//////// Copy to Clipboard
+
+        new Clipboard('.btn');
+
+        var clipboard = new Clipboard('.btn');
+
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+    </script>
+
+
+    <script>
+
+//////// Hide Header
+// grab an element
+var myElement = document.querySelector(".main-header");
+// construct an instance of Headroom, passing the element
+var headroom = new Headroom(myElement, { tolerance : 5 });
+// initialise
+
+
+headroom.init(); 
+
+//////// Fade In Content on Scroll
+    function showImages(el) {
+        var windowHeight = jQuery( window ).height();
+        $(el).each(function(){
+            var thisPos = $(this).offset().top;
+
+            var topOfWindow = $(window).scrollTop();
+            if (topOfWindow + windowHeight - 150 > thisPos ) {
+                $(this).addClass("fade-In");
+            }
+        });
+    }
+
+    // if the image in the window of browser when the page is loaded, show that image
+    $(document).ready(function(){
+            showImages('.post-header, .post img, .post article, .downlow, .about article');
+    });
+
+    // if the image in the window of browser when scrolling the page, show that image
+    $(window).scroll(function() {
+            showImages('.post-header, .post img, .post article, .downlow, .about article');
+    });
+
+
+</script>
+
+<script>
+function myFunction(copied)
+{
+document.getElementById("tooltip").innerHTML = "Copied!";
+}
+</script>
+
+</body>
+</html>

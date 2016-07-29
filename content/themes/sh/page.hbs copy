@@ -1,0 +1,52 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+<style>
+
+body {
+    background-color: #D84C23;
+    color: #000;
+}
+
+
+body a { color: #000;
+        text-decoration: none;
+    }
+.active {border-bottom: 1px solid #212121;}
+        
+
+</style>
+
+<header class="main-header">
+    <div class="top">
+        <h1>Simon Hellsing – Product Designer</br>
+            Berlin, Germany</br>
+            (0049) 1575-6633464</br>
+            simon.hellsing@hyperisland.se</br>
+        </h1>
+        <nav>
+            <a href="http://localhost:2368">Work</a>
+            <a href="http://localhost:2368/about" class="active">About</a>
+            <a href="http://localhost:2368/tag/journal">Things</a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="content about" role="main">
+    <article>
+
+        <img src="{{image}}"</img>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+    </article>
+</main>
+{{/post}}
