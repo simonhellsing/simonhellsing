@@ -89,8 +89,8 @@ body {
 
 /******** JS Fade In Images ********/
 .fade-In {
-  -webkit-animation: animat_show 0.4s;
-  animation: animat_show 0.8s;
+  -webkit-animation: animat_show 0.6s;
+  animation: animat_show 0.6s;
   visibility: visible !important; }
 
 @-webkit-keyframes animat_show {
@@ -199,7 +199,7 @@ article {
     margin-left: 6px;
     font-size: 14px; }
   article .excerpt {
-    margin-top: 0px;
+    margin-top: 10px;
     font-size: 16px;
     line-height: 22px;
     text-align: center;
@@ -222,7 +222,8 @@ article:nth-child(even) {
     width: 100%;
     margin-bottom: 70px; }
     .about article img {
-      width: 300px; }
+      display: none;
+      width: 360px; }
     .about article .intro {
       width: 100%;
       margin: 0 auto; }
@@ -291,7 +292,7 @@ article:nth-child(even) {
     font-size: 20px;
     line-height: 34px;
     max-width: 600px;
-    margin-bottom: 80px;
+    margin-bottom: 150px;
     width: 100%;
     float: none;
     text-align: center; }
@@ -319,18 +320,20 @@ article:nth-child(even) {
     width: 100%; }
     .post article p img {
       width: 100%;
-      margin-top: 40px; }
+      margin-bottom: 150px; }
+  .post article p:nth-child(1) img {
+    width: 80%; }
 
 .post-other {
   float: left;
   width: 100%;
   height: auto;
-  background-color: #ffffff; }
+  background-color: #DADADA; }
 
 .post-next {
   float: right;
   width: 50%;
-  background-color: #E1E1E1;
+  background-color: #DADADA;
   height: 160px;
   padding-top: 100px; }
   .post-next .byline {
@@ -351,7 +354,7 @@ article:nth-child(even) {
 .post-previous {
   float: left;
   width: 50%;
-  background-color: #E5E5E5;
+  background-color: #DADADA;
   height: 160px;
   padding-top: 100px; }
   .post-previous .byline {
@@ -370,8 +373,8 @@ article:nth-child(even) {
     transition: all 0.1s ease-in-out; }
 
 .post-next:hover, .post-previous:hover {
-  background-color: #212121;
-  opacity: 0.5; }
+  background-color: #C6C6C6;
+  opacity: 1; }
 
 /******** Media Query: Thunderbolt ********/
 @media screen and (min-width: 1024px) {
@@ -379,6 +382,12 @@ article:nth-child(even) {
     width: 60%;
     margin: 0 auto;
     padding-top: 200px;
+    text-align: center; }
+
+  .post-template main {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 150px;
     text-align: center; } }
 /******** Media Query: Macbook *********/
 @media screen and (max-width: 1024px) {
@@ -386,6 +395,12 @@ article:nth-child(even) {
     width: 80%;
     margin: 0 auto;
     padding-top: 200px;
+    text-align: center; }
+
+  .post-template main {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 150px;
     text-align: center; }
 
   body {
@@ -419,6 +434,16 @@ article:nth-child(even) {
     margin-bottom: 50px;
     text-align: left; }
 
+  .post-template main {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center; }
+
+  .post article p img {
+    width: 90%;
+    margin-bottom: 50px; }
+
   article {
     max-width: none;
     width: 100%; }
@@ -435,6 +460,9 @@ article:nth-child(even) {
       margin: 0 auto;
       text-align: center; }
 
+  header.main-header.alt {
+    background-color: #E6E6E6; }
+
   .post-header:hover img {
     transform: scale(1, 1);
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -445,6 +473,9 @@ article:nth-child(even) {
     margin: 0 auto; }
 
   .post article h1 {
+    font-size: 18px;
+    line-height: 32px;
+    text-align: left;
     width: auto;
     margin-left: 35px;
     margin-right: 35px; }
@@ -461,6 +492,11 @@ article:nth-child(even) {
     width: 100%;
     height: 80px;
     padding-top: 20px; }
+    .post-previous .post-title, .post-next .post-title {
+      margin-top: 5px; }
+
+  .post-previous {
+    border-bottom: 1px solid #E6E6E6; }
 
   .about article {
     margin-bottom: 50px; }
